@@ -124,7 +124,8 @@
 
             try
             {
-                var discriminatorObj = JObject.Parse(jsonString)["{{{propertyName}}}"];
+                var json = JObject.Parse(jsonString);
+                var discriminatorObj = json["{{propertyName}}"];
                 string discriminatorValue =  discriminatorObj == null ?string.Empty :discriminatorObj.ToString();
                 switch (discriminatorValue)
                 {
